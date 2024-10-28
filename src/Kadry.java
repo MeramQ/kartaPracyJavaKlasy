@@ -144,8 +144,7 @@ public class Kadry {
 
         int[] dzialy = dajDzialy();
         for (int dzial : dzialy) {
-            double sredniZarobekDzialu = sredniZarobek(dzial);
-            System.out.printf("Średnia płaca w dziale %d wynosi: %.2f zł%n", dzial, sredniZarobekDzialu);
+            System.out.printf("Średnia płaca w dziale %d wynosi: %.2f zł%n", dzial, sredniZarobek(dzial));
         }
     }
 }
