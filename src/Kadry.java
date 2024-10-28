@@ -74,6 +74,7 @@ public class Kadry {
     public void importujZPlikuTekstowego(String nazwaPliku) throws FileNotFoundException {
         File plik = new File(nazwaPliku);
         Scanner odczyt = new Scanner(plik);
+        int liczbaP = 0;
 
         while (odczyt.hasNextLine()) {
             String linia = odczyt.nextLine();
@@ -88,10 +89,12 @@ public class Kadry {
 
                 Pracownik pracownik = new Pracownik(imie, nazwisko, placa, plec, dzial);
                 dodajPracownika(pracownik);
+                liczbaP++;
             } else {
                 System.out.println("Nieprawidłowy format wiersza: " + linia);
             }
         }
+        System.out.printf("Wczytano poprawnie dane %d pracowników z pliku: %s%n",liczbaP, nazwaPliku);
 
         odczyt.close();
     }
